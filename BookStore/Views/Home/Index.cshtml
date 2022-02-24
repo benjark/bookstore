@@ -7,27 +7,7 @@
 
 @foreach (Book b in Model.Books)
 {
-<span class="card card-outline-primary m-1 p-1">
-
-    <div class="bg-light p-1">
-        <h4>@b.Title</h4>
-    </div>
-
-
-    <ul class="list-group">
-        <li class="list-group-item">Price: $@b.Price</li>
-        <li class="list-group-item">Author: @b.Author</li>
-        <li class="list-group-item">Category: @b.Category.</li>
-        <li class="list-group-item">Page Count: @b.PageCount</li>
-        <li class="list-group-item">Publisher: @b.Publisher</li>
-        <li class="list-group-item">Page Count: @b.PageCount</li>
-        <li class="list-group-item">ISBN: @b.Isbn</li>
-    </ul>
-
-
-    
-</span>
-<br />
+    <partial name="BookSummary" model="b"/>
 }
 
 <div page-blah="@Model.PageInfo" page-action="Index" page-class="btn"
