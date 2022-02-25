@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -11,9 +12,11 @@ namespace BookStore
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[ ] args )
         {
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
             CreateHostBuilder(args).Build().Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +25,9 @@ namespace BookStore
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
     }
+
 }
+
