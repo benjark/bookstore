@@ -34,6 +34,7 @@ namespace BookStore.Models
         {
             double sum = Items.Sum(x => x.Quantity * 20);
 
+
             return sum;
         }
     }
