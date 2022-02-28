@@ -34,6 +34,17 @@ namespace BookStore
            });
 
             services.AddScoped<IBookStoreRepository, BookstoreRepository>();
+<<<<<<< Updated upstream
+=======
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+>>>>>>> Stashed changes
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +62,19 @@ namespace BookStore
 
             app.UseEndpoints(endpoints =>
             {
+<<<<<<< Updated upstream
+=======
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/Page{pageNum}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute(name: "Paging", pattern: "Page{PageNum}", defaults: new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
+            
+>>>>>>> Stashed changes
                 //uses default controller route
             endpoints.MapDefaultControllerRoute();
                 
