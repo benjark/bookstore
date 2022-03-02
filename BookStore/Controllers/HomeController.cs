@@ -12,7 +12,7 @@ namespace BookStore.Controllers
     {
         private IBookStoreRepository repo;
 
-        public HomeController (IBookStoreRepository temp)
+        public HomeController(IBookStoreRepository temp)
         {
             repo = temp;
         }
