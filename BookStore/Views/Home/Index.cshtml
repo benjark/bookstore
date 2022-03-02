@@ -3,15 +3,31 @@
 
 @model BooksViewModel
 
-<h1>Seabull Bookstore</h1>
+<h1>All Books</h1>
 
 @foreach (Book b in Model.Books)
 {
-    <partial name="BookSummary" model="b"/>
+    <span class="card card-outline-primary m-1 p-1">
+
+        <div class="bg-light p-1">
+            <h4>@b.Title</h4>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item">Price: $@b.Price</li>
+            <li class="list-group-item">Author: @b.Author</li>
+            <li class="list-group-item">Category: @b.Category.</li>
+            <li class="list-group-item">Page Count: @b.PageCount</li>
+            <li class="list-group-item">Publisher: @b.Publisher</li>
+            <li class="list-group-item">Page Count: @b.PageCount</li>
+            <li class="list-group-item">ISBN: @b.Isbn</li>
+        </ul>
+
+    </span>
+    <br />
 }
 
 <div page-blah="@Model.PageInfo" page-action="Index" page-class="btn"
-    page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-classes-enabled="true"
-    class="btn-group pull-right m-1"></div>
-    
+     page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-classes-enabled="true"
+     class="btn-group pull-right m-1"></div>
 

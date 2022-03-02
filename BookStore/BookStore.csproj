@@ -18,6 +18,7 @@
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Categories\" />
+    <Folder Include="Components\Categories\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
@@ -30,6 +31,7 @@
     <None Remove="bootstrap" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Categories\" />
+    <None Remove="Components\Categories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.22">

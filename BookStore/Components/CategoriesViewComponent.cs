@@ -11,25 +11,25 @@ namespace BookStore.Components
     {
         private IBookStoreRepository repo { get; set; }
 
-        public CategoriesViewComponent (IBookStoreRepository temp)
+        public CategoriesViewComponent(IBookStoreRepository temp)
         {
             repo = temp;
         }
 
         public IViewComponentResult Invoke()
 
-            
+
         {
 
-            
-            ViewBag.SelectedCategory = RouteData?.Values["Category"];
+
+            ViewBag.SelectedCategory = RouteData?.Values["category"];
 
             var categories = repo.Books
                 .Select(x => x.Category)
                 .Distinct()
                 .OrderBy(x => x);
 
-            return View(categories); 
+            return View(categories);
         }
     }
 }
