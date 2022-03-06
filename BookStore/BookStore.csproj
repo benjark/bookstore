@@ -21,6 +21,7 @@
     <Folder Include="Components\Categories\" />
     <Folder Include="Views\Purchase\" />
     <Folder Include="Views\Shared\Components\BasketSummary\" />
+    <Folder Include="Pages\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
@@ -38,6 +39,7 @@
     <None Remove="FontAwesome" />
     <None Remove="Views\Shared\Components\BasketSummary\" />
     <None Remove="Font.Awesome" />
+    <None Remove="Pages\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.22">
