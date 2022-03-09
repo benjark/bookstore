@@ -9,27 +9,25 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </head>
     <body>
-        
+
         <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-black bg-opacity-75 border-bottom shadow-lg mb-3">
                 <div class="container">
-                    <a class="navbar-brand ml2" asp-area="" asp-controller="Home" asp-action="Index">Seabull Gook</a>
+                    <a class="navbar-brand sticky-top" asp-area="" asp-controller="Home" asp-action="Index">Seabull Gook</a>
 
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            @*<li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>*@
 
-                        </ul>
-                        <ul class="nav-item justify-content-end">
-                            
-                          
-                                <a class="nav-link text-dark text-right"> <vc:basket-summary></vc:basket-summary></a>
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
 
-                            </ul>
-                    </div>
-                    </div>
-                
+                    <ul class="nav-item justify-content-end">
+
+
+                        <a class="nav-link text-dark text-right"> <vc:basket-summary></vc:basket-summary></a>
+
+                    </ul>
+
+                </div>
+
             </nav>
         </header>
 
@@ -45,8 +43,8 @@
             </div>
 
         </div>
-
-        <footer class="border-top footer text-muted">
+        <br />
+        <footer class="footer shadow-lg bg-black bg-opacity-10 text-muted">
             <div class="container">
                 &copy; Benjamin Kloepfer 2022 <a asp-area="" asp-controller="Home"></a>
             </div>
@@ -54,6 +52,7 @@
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+
         @RenderSection("Scripts", required: false)
     </body>
 </html>
