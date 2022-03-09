@@ -26,6 +26,8 @@ namespace BookStore.Models
             {
                 context.Purchases.Add(purchase);
             }
+
+            context.SaveChanges();
         }
     }
 }

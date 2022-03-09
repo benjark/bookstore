@@ -74,7 +74,9 @@ namespace BookStore
                     "{category}",
                     new { Controller = "Home", action = "Index", pageNum = 1 });
 
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapRazorPages();
 
