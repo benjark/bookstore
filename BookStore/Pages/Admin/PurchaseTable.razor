@@ -1,38 +1,40 @@
 ﻿<table class="table table-sm table-striped table-bordered">
+
     <thead>
         <tr>
             <th colspan="5" class="text-center">@TableTitle</th>
         </tr>
     </thead>
+
     <tbody>
         @if (Purchases?.Count() > 0)
             {
                 @foreach (Purchase p in Purchases)
                     {
-        <tr>
-            <td>@p.Name</td>
-            <td>@p.Zip</td>
-            <th>Book</th>
-            <th>Quantity</th>
+                    <tr>
+                        <td>@p.Name</td>
+                        <td>@p.Zip</td>
+                        <th>Book</th>
+                        <th>Quantity</th>
 
-            <td>
-                <button class="btn btn-sm btn-danger" @onclick="@(x => PurchaseSelected.InvokeAsync(p.PurchaseID))">
-                    @ButtonLabel
-                </button>
-            </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" @onclick="@(x => PurchaseSelected.InvokeAsync(p.PurchaseID))">
+                            @ButtonLabel
+                        </button>
+                    </td>
 
-        </tr>
+                </tr>
 
-        @foreach (BasketLineItem bli in p.Lines)
-          {
-            <tr>
-                <td colspan="2"></td>
-                <td>@bli.Book.Title</td>
-                <td>@bli.Quantity</td>
-            </tr>
+                @foreach (BasketLineItem bli in p.Lines)
+                  {
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>@bli.Book.Title</td>
+                        <td>@bli.Quantity</td>
+                    </tr>
+                            }
+                        }
                     }
-                }
-            }
             else
             {
                 <tr>
