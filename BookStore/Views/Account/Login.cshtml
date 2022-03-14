@@ -14,31 +14,67 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </head>
 
-<body>
-    <div class="bg-dark text-white p-2">
-        <span class="navbar-brand m-l-2">Seabull Gook</span>
-    </div>
+    <body>
+        <header>
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-black bg-opacity-75 border-bottom shadow-lg mb-3">
+                <div class="container">
+                    <a class="navbar-brand sticky-top" asp-area="" asp-controller="Home" asp-action="Index">Seabull Gook</a>
 
-    <div class="m-1 p-1">
-        <div class="text-danger" asp-validation-summary="All"></div>
-    </div>
 
-    
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
 
-    <form method="post" asp-controller="Account" asp-action="Login">
-        <div class="form-group">
-            <label asp-for="Username">User Name:</label>
-            <input asp-for="Username" class="form-control" />
+                    <ul class="nav-item justify-content-end">
+                    </ul>
+
+                </div>
+
+            </nav>
+        </header>
+
+
+
+        <div class="m-1 p-1">
+            <div class="text-danger" asp-validation-summary="All"></div>
         </div>
 
-        <div class="form-group">
-            <label asp-for="Password">Password:</label>
-            <input asp-for="Password" class="form-control" type="password" />
-        </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
 
-        <input type="hidden" asp-for="ReturnUrl" />
-    </form>
 
-</body>
+
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-6 col-md-4 col-lg-6 col-xl-5">
+                        <div class="card bg-light text-black shadow" style="border-radius: 2rem;">
+                            <div class="card-body p-3 text-center">
+
+                                <div class="mb-md-3 mt-md-4 pb-3">
+
+                                    <form method="post" asp-controller="Account" asp-action="Login">
+                                        <div class="form-group input-group-lg">
+                                            <label asp-for="Username">User Name:</label>
+                                            <input asp-for="Username" class="form-control form-control-lg" />
+                                        </div>
+
+                                        <div class="form-group input-group-lg">
+                                            <label asp-for="Password">Password:</label>
+                                            <input asp-for="Password" class="form-control form-control-lg" type="password" />
+                                        </div>
+                                        <br />
+                                        <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
+
+                                        <input type="hidden" asp-for="ReturnUrl" />
+                                    </form>
+
+                                    
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>

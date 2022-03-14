@@ -44,11 +44,11 @@ namespace BookStore.Controllers
                     }
                 }
             }
-                ModelState.AddModelError("", "Invalid name or password");
-                return View(loginModel);
-            
+            ModelState.AddModelError("", "Invalid name or password");
+            return View(loginModel);
+
         }
-        public async Task<RedirectResult> Logout (string returnUrl = "/")
+        public async Task<RedirectResult> Logout(string returnUrl = "/")
         {
             await signInManager.SignOutAsync();
 
