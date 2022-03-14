@@ -2,13 +2,15 @@
 @page "/admin"
 @inherits OwningComponentBase<IBookStoreRepository>
 
-<table class="table table-sm table-striped table-bordered">
+<table class="table table-sm shadow table-striped table-bordered">
 
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>Book ID</th>
             <th>Book Name</th>
-            
+            <th> </th>
+            <th> </th>
+            <th> </th>
         </tr>
     </thead>
 
@@ -18,34 +20,34 @@
         {
             // List books
             @foreach (Book b in BookData)
-                {
-        <tr>
-            <td>@b.BookId</td>
-            <td>@b.Title</td>
-
-            <td>
-                <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(b.BookId)">Details</NavLink>
-            </td>
-            <td>
-                <NavLink class="btn btn-warning btn-sm" href="@GetEditUrl(b.BookId)">Edit</NavLink>
-            </td>
-            <td>
-                <button class="btn btn-danger btn-sm" @onclick="@(x => RemoveBook(b))">Delete</button>
-            </td>
-        </tr>
-                }
-        }
-        else
             {
                 <tr>
-                    <td colspan="5" class="text-center">No Books</td>
+                    <td>@b.BookId</td>
+                    <td>@b.Title</td>
+
+                    <td>
+                        <NavLink class="btn btn-info shadow-sm btn-sm" href="@GetDetailsUrl(b.BookId)">Details</NavLink>
+                    </td>
+                    <td>
+                        <NavLink class="btn btn-warning shadow-sm btn-sm" href="@GetEditUrl(b.BookId)">Edit</NavLink>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger shadow-sm btn-sm" @onclick="@(x => RemoveBook(b))">Delete</button>
+                    </td>
                 </tr>
             }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No Books</td>
+            </tr>
+        }
 
     </tbody>
 </table>
 
-<NavLink class="btn btn-primary" href="/admin/books/create">Create</NavLink>
+<NavLink class="btn btn-primary" href="/admin/books/create">Add Book</NavLink>
 
 
 @code {

@@ -34,7 +34,7 @@ namespace BookStore.Controllers
                 IdentityUser user = await userManager.FindByNameAsync(loginModel.Username);
 
 
-                if (User != null)
+                if (user != null)
                 {
                     await signInManager.SignOutAsync();
 
